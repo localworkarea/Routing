@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Home Page"
+	})
+	<body>
+		<div class="wrapper home-page">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="hero">
+					<div class="hero__bg">
+						<img class="hero__img ibg" src="@img/hero.jpg" width="1920"  height="1080" alt="image hero">
+					</div>
+					<div class="hero__container">
+						<h1 class="hero__title main-title">
+							API service for route optimization. Development of products for route optimization and their administration
+						</h1>
+					</div>
+				</section>
+				<section class="about">
+					<div class="about__container">
+						<div class="about__wrapper">
+							<div class="about__img">
+								<img class="ibg ibg--contain" width="1170" height="780" src="@img/image_1.png" alt="image">
+							</div>
+							<div class="about__body">
+								<p class="about__txt line-after">
+									API service for route optimization. By sending a list of points to visit, as well as the transport that you have available, you will be able to receive an optimized data package that will include the sequence of visiting delivery points for each vehicle.
+								</p>
+							</div>
+						</div>
+						<div class="about__wrapper about__wrapper--revers">
+							<div class="about__img">
+								<img class="ibg ibg--contain" width="1170" height="780" src="@img/image_2.png" alt="image">
+							</div>
+							<div class="about__body">
+								<p class="about__txt line-after">
+									Our company offers you not only the API service for calculating optimal delivery routes. As a development team, we are ready to tailor the optimization process specifically to your needs. This means changing the optimization criteria or weights to find more optimal results specifically for you. After studying the specifics of your delivery business, we will be able to make you a commercial offer, providing data on the specific advantages of the proposed modules. Of course you can also use our API service "as is" too.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="deliver bg-acc">
+					<div class="deliver__container">
+						<h2 class="deliver__title main-title main-title--black title-sub">
+							Deliver with confidence
+						</h2>
+						<div class="deliver__body">
+							<div class="deliver__left">
+								<img class="deliver__ic" src="@img/icons/dollar.svg" width="79" height="79" alt="icon dollar">
+								<svg class="deliver__bg" width="168" height="174" viewBox="0 0 168 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.70968 50.5462L51.4095 7.61529C57.9583 1.1818 67.6032 -0.952398 76.2548 2.11762L140.335 24.8563C148.353 27.7016 154.266 34.5797 155.876 42.9345L167.223 101.839C168.928 110.686 165.533 119.743 158.432 125.291L103.401 168.287C97.1444 173.175 88.8756 174.652 81.3135 172.234L26.7269 154.775C18.0095 151.987 11.6367 144.483 10.2967 135.429L0.787586 71.1805C-0.335641 63.5914 2.23696 55.9226 7.70968 50.5462Z"></path>
+									</svg>
+								<div class="deliver__wrapper">
+									<p class="deliver__num">23%</p>
+									<p class="deliver__num-txt">Lower cost per delivery</p>
+								</div>
+							</div>
+							<div class="deliver__right">
+								<p class="deliver__txt line-after">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam porro laboriosam obcaecati laborum labore sit corporis illum. Sit maiores cupiditate, ipsum harum repellendus, expedita fugit dolore perspiciatis delectus enim officiis.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

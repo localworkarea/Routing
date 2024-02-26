@@ -1,0 +1,102 @@
+.footer {
+  color: white;
+  @include adaptiveValue("padding-top", 100, 50);
+  @include adaptiveValue("padding-bottom", 30, 20);
+  position: relative;
+	// .footer__bg
+	&__bg {
+    overflow: hidden;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background-color: rgba(33, 37, 41, 0.9);
+    }
+	}
+  // .footer__container
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+  // .footer__top
+  &__top {
+    display: grid;
+    padding-bottom: toRem(30);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    @media (min-width:$mobileSmall){
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width:$mobileSmall){
+      grid-template-columns: auto 1fr;
+      gap: toRem(30);        
+    }
+  }
+  // .footer__logo
+  &__logo {
+    img {
+      @include adaptiveValue("max-width", 200, 100);
+      width: 100%;
+      height: auto;
+    }
+  }
+  // .footer__nav
+  &__nav {
+  }
+  // .footer__bottom
+  &__bottom {
+    padding-top: toRem(15);
+    display: flex;
+    gap: toRem(20);
+    @include adaptiveValue("font-size", 13, 11);
+    color: #a8b1b8;
+    @media (min-width:$mobileSmall){
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @media (max-width:$mobileSmall){
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+  // .footer__left
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: toRem(20);
+  }
+  // .footer__link
+  &__link {
+    transition: color .3s ease;
+    @media (any-hover: hover){
+      &:hover{
+        color: white;
+      }
+    }
+  }
+  // .footer__allright
+  &__allright {
+
+  }
+}
+
+.nav-footer {
+  // .nav-footer__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10);
+  }
+  // .nav-footer__item
+  &__item {
+  }
+  // .nav-footer__link
+  &__link {
+    @include adaptiveValue("font-size", 26, 18);
+    text-transform: uppercase;
+    @extend %animLines;
+  }
+}

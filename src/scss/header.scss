@@ -12,15 +12,15 @@
   display: flex;
   align-items: center;
   &._header-scroll {
-    @media (min-width:$mobile){
+    @media (min-width:toEm(900.98)){
       background-color: $blackBg;
       min-height: toRem(66);
     }
   }
-  @media (min-width:$mobile){
+  @media (min-width:toEm(900.98)){
     min-height: toRem(100);
   }
-  @media (max-width:$mobile){
+  @media (max-width:toEm(900.98)){
     background-color: $blackBg;
   }
   // .header__container
@@ -29,24 +29,27 @@
     display: grid;
     align-items: center;
     gap: toRem(20);
-    @media (min-width:$mobile){
-      grid-template-columns: auto 1fr auto; 
-    }
-    @media (max-width:$mobile){
-       grid-template-columns: auto 1fr auto auto; 
-       gap: toRem(30);
-    }
+    grid-template-columns: auto 1fr auto; 
+    // @media (max-width:toEm(900.98)){
+    //    grid-template-columns: auto 1fr auto auto; 
+    //    gap: toRem(30);
+    // }
   }
   // .header__logo
   &__logo {
+    display: flex;
+    align-items: flex-end;
+    align-self: baseline;
+    span {
+      display: inline-block;
+      font-size: toRem(27);
+      font-weight: 700;
+      letter-spacing: toRem(-1);
+      line-height: 0.7;
+    }
     img {
+      width: toRem(30);
       height: auto;
-      @media (min-width:$mobile){
-        width: toRem(45);
-      }
-      @media (max-width:$mobile){
-         width: toRem(38); 
-      }
     }
   }
   // .header__menu
@@ -63,7 +66,7 @@
   }
   // .menu__body
   &__body {
-    @media (max-width: $mobile) {
+    @media (max-width: toEm(900.98)) {
 			position: fixed;
 			width: 100%;
 			height: 100%;
@@ -79,7 +82,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-			
+      gap: toRem(60);
 			.menu-open & {
         opacity: 1;
         pointer-events: all;
@@ -90,18 +93,18 @@
   &__list {
     display: flex;
     align-items: center;
-    @media (min-width:$mobile){
+    @media (min-width:toEm(900.98)){
       flex-wrap: wrap;
       gap: toRem(20);
     }
-    @media (max-width:$mobile){
+    @media (max-width:toEm(900.98)){
        flex-direction: column; 
        gap: toRem(40);
     }
   }
   // .menu__item
   &__item {
-    @media (max-width:$mobile){
+    @media (max-width:toEm(900.98)){
        overflow: hidden; 
     }
   }
@@ -110,7 +113,7 @@
     text-transform: uppercase;
     font-weight: 600;
     @extend %animLines;
-    @media (max-width:$mobile){
+    @media (max-width:toEm(900.98)){
        font-size: toRem(36); 
        transition: transform .45s ease;
        transform: translateY(100%);
@@ -121,6 +124,17 @@
   }
   // .menu__button
   &__button {
+    @media (max-width: toEm(900.98)) {
+      height: toRem(50);
+      font-size: toRem(18);
+      opacity: 0;
+      transform: translateY(50%);
+      .menu-open & {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .15s;
+      }
+    }
   }
 }
 
@@ -129,7 +143,7 @@
 //Burger Icon
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: toEm(900.98)) {
 		display: block;
 		position: relative;
 		width: toRem(30);

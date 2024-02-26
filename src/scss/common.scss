@@ -14,7 +14,7 @@
   font-weight: 700;
   color: #000;
 
-  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease, opacity .45s ease, transform .45s ease;
   @media (any-hover: hover){
     &:hover{
       color: white;

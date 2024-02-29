@@ -6,20 +6,65 @@
   
   padding: 0 toRem(20);
   height: toRem(42);
-  background-color: $yellowMain;
   border: toRem(1) solid transparent;
-
-  text-transform: uppercase;
+  
   font-size: toRem(14);
   font-weight: 700;
-  color: #000;
-
+  text-transform: uppercase;
+  
   transition: color .3s ease, background-color .3s ease, border-color .3s ease, opacity .45s ease, transform .45s ease;
-  @media (any-hover: hover){
-    &:hover{
-      color: white;
-      background-color: #b3a042;
-      border-color: white;
+
+  @media (max-width:$mobileSmall){
+     height: toRem(50); 
+     font-size: toRem(16);
+  }
+  
+  &--01 {
+    background-color: $yellowMain;
+    color: #000;
+    @media (any-hover: hover){
+      &:hover{
+        color: white;
+        // background-color: #b3a042;
+        background-color: #000;
+        border-color: white;
+      }
+    }
+  }
+  &--02 {
+    background-color: #000;
+    color: white;
+    @media (any-hover: hover){
+      &:hover{
+        color: #000;
+        background-color:$yellowMain;
+        // background-color: #000;
+        border-color: #000;
+      }
+    }
+  }
+  &--03 {
+    background-color: white;
+    color: $green;
+    border-color: $green;
+    @media (any-hover: hover){
+      &:hover{
+        color: white;
+        background-color: #000;
+        border-color: white;
+      }
+    }
+  }
+  &--04 {
+    background-color: $green;
+    color: white;
+    border-color: $green;
+    @media (any-hover: hover){
+      &:hover{
+        color: #000;
+        background-color: white;
+        border-color: #000;
+      }
     }
   }
 }
@@ -69,6 +114,11 @@
 %animLines {
   @media (min-width:$mobile){
     position: relative;
+    &.active {
+      &::before {
+        background-color: $green;
+      }
+    }
     &::before {
       content: '';
       position: absolute;
@@ -89,6 +139,45 @@
         transform: scale(1);
         transform-origin: 0 50%;
       }
+    }
+  }
+}
+
+%sectionPadding {
+  @include adaptiveValue("padding-top", 100, 50);
+  @include adaptiveValue("padding-bottom", 100, 50);
+}
+
+
+.sub-head {
+  background-color: #000;
+  padding-bottom: toRem(35);
+  @media (min-width:toEm(900.98)){
+      padding-top: toRem(120);
+  }
+  @media (max-width: toEm(900.98)){
+      padding-top: toRem(100);
+  }
+  // .sub-head__container
+  &__container {
+  }
+  // .sub-head__title
+  &__title {
+    color: white;
+    font-weight: 700;
+    &:not(:last-child) {
+      margin-bottom: toRem(15) !important;
+    }
+  }
+  // .sub-head__subtitle
+  &__subtitle {
+    @include adaptiveValue("margin-left", 27, 23,0,1920,375);
+    @include adaptiveValue("font-size", 30, 18);
+    @media (min-width:$mobileSmall){
+      text-transform: capitalize;
+    }
+    @media (max-width:$mobileSmall){
+       text-transform: uppercase; 
     }
   }
 }

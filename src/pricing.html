@@ -4,9 +4,124 @@
 	"title":"Pricing"
 	})
 	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
+		<div class="wrapper pricing-page">
+			@@include('html/_header.htm',{
+				"home": "",
+				"price": "active",
+				"how": "",
+				"about": "",
+				"contacts": ""
+			})
 			<main class="page">
+				<section class="pricing">
+					@@include('html/_subhead.htm',{
+						"title":"Pricing",
+						"subtitle":"Flexible pricing plans that scale with your needs"
+					})
+					<div class="pricing__container">
+						<ul class="pricing__list">
+							<li class="pricing__item item-pricing">
+								<h3 class="item-pricing__title">Standart</h3>
+								<p class="item-pricing__price">
+									<span class="dollar">$</span> <span class="price">38</span><span class="month">/mo</span>
+								</p>
+								<p class="item-pricing__subtitle">This plan is Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit rem, incidunt deleniti esse culpa cupiditate aliquid </p>
+								<ul class="item-pricing__sublist">
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+								</ul>
+								<button type="button" class="item-pricing__button btn btn--01" aria-label="button to choose a plan">Get started</button>
+							</li>
+							<li class="pricing__item item-pricing">
+								<h3 class="item-pricing__title">Professional</h3>
+								<p class="item-pricing__price">
+									<span class="dollar">$</span> <span class="price">45</span><span class="month">/mo</span>
+								</p>
+								<p class="item-pricing__subtitle">This plan is Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit rem, incidunt deleniti esse culpa cupiditate aliquid </p>
+								<ul class="item-pricing__sublist">
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+								</ul>
+								<button type="button" class="item-pricing__button btn btn--02" aria-label="button to choose a plan">Get started</button>
+							</li>
+							<li class="pricing__item item-pricing">
+								<h3 class="item-pricing__title">all inclusive</h3>
+								<p class="item-pricing__price">
+									<span class="dollar">$</span> <span class="price">53</span><span class="month">/mo</span>
+								</p>
+								<p class="item-pricing__subtitle">This plan is Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit rem, incidunt deleniti esse culpa cupiditate aliquid </p>
+								<ul class="item-pricing__sublist">
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+									<li class="item-pricing__subitem">
+										<p>Lorem, ipsum dolor sit amet consectetur</p>
+									</li>
+								</ul>
+								<button type="button" class="item-pricing__button btn btn--04" aria-label="button to choose a plan">Get started</button>
+							</li>
+						</ul>
+						<form class="pricing__checkout checkout">
+							<div class="checkout__licenses">
+								<p class="checkout__lic-title">How many licenses:</p>
+								<div data-quantity class="quantity">
+									<button data-quantity-minus type="button" class="quantity__button quantity__button--minus"></button>
+									<div class="quantity__input">
+										<input data-quantity-value data-quantity-max="10" autocomplete="off" type="text" name="form[]" value="1">
+									</div>
+									<button data-quantity-plus type="button" class="quantity__button quantity__button--plus"></button>
+								</div>
+							</div>
+							<div class="checkout__count">
+								<p class="checkout__count-txt">Subtotal:</p>
+								<span class="checkout__num">$10</span>
+							</div>
+							<div class="checkout__count">
+								<p class="checkout__count-txt">VAT @20%:</p>
+								<span class="checkout__num">$20</span>
+							</div>
+							<div class="checkout__count total">
+								<p class="checkout__count-txt">TOTAL:</p>
+								<span class="checkout__num">$100</span>
+							</div>
+							<div class="checkout__checkbox checkbox">
+								<input id="check-1" data-error="Помилка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+								<label for="check-1" class="checkbox__label"><span class="checkbox__text">
+									I agree to the following <a href="terms.html">Terms and Condition</a>
+								</span></label>
+							</div>
+							<button type="submit" class="checkout__button btn btn--01">Checkout</button>
+							<a href="#" class="checkout__demo">Try Free Demo</a>
+						</form>
+					</div>
+				</section>
+				
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>

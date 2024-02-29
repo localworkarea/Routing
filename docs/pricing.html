@@ -6,14 +6,14 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240226172559">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240229185111">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper pricing-page">
 		<header data-scroll="20" class="header">
 			<div class="header__container">
 				<a href="index.html" class="header__logo">
@@ -23,19 +23,130 @@
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Pricing</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">How it works</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Contacts</a></li>
+							<li class="menu__item"><a href="index.html" class="menu__link ">Home</a></li>
+							<li class="menu__item"><a href="pricing.html" class="menu__link active">Pricing</a></li>
+							<li class="menu__item"><a href="how.html" class="menu__link ">How it works</a></li>
+							<li class="menu__item"><a href="about.html" class="menu__link ">About Us</a></li>
+							<li class="menu__item"><a href="contacts.html" class="menu__link ">Contacts</a></li>
 						</ul>
 					</nav>
 				</div>
-				<a href="#" data-da=".menu__body,900.98,last" class="menu__button btn">Get Started</a>
+				<a href="#" data-da=".menu__body,900.98,last" class="menu__button btn btn--01">Get Started</a>
 				<button type="button" class="menu__icon icon-menu" aria-label="button to open/close a mobile menu"><span></span></button>
 			</div>
 		</header>
 		<main class="page">
+			<section class="pricing">
+				<div class="sub-head">
+					<div class="sub-head__container">
+						<h1 class="sub-head__title main-title title-sub">Pricing</h1>
+						<p class="sub-head__subtitle">Flexible pricing plans that scale with your needs</p>
+					</div>
+				</div>
+				<div class="pricing__container">
+					<ul class="pricing__list">
+						<li class="pricing__item item-pricing">
+							<h3 class="item-pricing__title">Standart</h3>
+							<p class="item-pricing__price">
+								<span class="dollar">$</span> <span class="price">38</span><span class="month">/mo</span>
+							</p>
+							<p class="item-pricing__subtitle">This plan is Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit rem, incidunt deleniti esse culpa cupiditate aliquid </p>
+							<ul class="item-pricing__sublist">
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+							</ul>
+							<button type="button" class="item-pricing__button btn btn--01" aria-label="button to choose a plan">Get started</button>
+						</li>
+						<li class="pricing__item item-pricing">
+							<h3 class="item-pricing__title">Professional</h3>
+							<p class="item-pricing__price">
+								<span class="dollar">$</span> <span class="price">45</span><span class="month">/mo</span>
+							</p>
+							<p class="item-pricing__subtitle">This plan is Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit rem, incidunt deleniti esse culpa cupiditate aliquid </p>
+							<ul class="item-pricing__sublist">
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+							</ul>
+							<button type="button" class="item-pricing__button btn btn--02" aria-label="button to choose a plan">Get started</button>
+						</li>
+						<li class="pricing__item item-pricing">
+							<h3 class="item-pricing__title">all inclusive</h3>
+							<p class="item-pricing__price">
+								<span class="dollar">$</span> <span class="price">53</span><span class="month">/mo</span>
+							</p>
+							<p class="item-pricing__subtitle">This plan is Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit rem, incidunt deleniti esse culpa cupiditate aliquid </p>
+							<ul class="item-pricing__sublist">
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+								<li class="item-pricing__subitem">
+									<p>Lorem, ipsum dolor sit amet consectetur</p>
+								</li>
+							</ul>
+							<button type="button" class="item-pricing__button btn btn--04" aria-label="button to choose a plan">Get started</button>
+						</li>
+					</ul>
+					<form class="pricing__checkout checkout">
+						<div class="checkout__licenses">
+							<p class="checkout__lic-title">How many licenses:</p>
+							<div data-quantity class="quantity">
+								<button data-quantity-minus type="button" class="quantity__button quantity__button--minus"></button>
+								<div class="quantity__input">
+									<input data-quantity-value data-quantity-max="10" autocomplete="off" type="text" name="form[]" value="1">
+								</div>
+								<button data-quantity-plus type="button" class="quantity__button quantity__button--plus"></button>
+							</div>
+						</div>
+						<div class="checkout__count">
+							<p class="checkout__count-txt">Subtotal:</p>
+							<span class="checkout__num">$10</span>
+						</div>
+						<div class="checkout__count">
+							<p class="checkout__count-txt">VAT @20%:</p>
+							<span class="checkout__num">$20</span>
+						</div>
+						<div class="checkout__count total">
+							<p class="checkout__count-txt">TOTAL:</p>
+							<span class="checkout__num">$100</span>
+						</div>
+						<div class="checkout__checkbox checkbox">
+							<input id="check-1" data-error="Помилка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+							<label for="check-1" class="checkbox__label"><span class="checkbox__text">
+									I agree to the following <a href="terms.html">Terms and Condition</a>
+								</span></label>
+						</div>
+						<button type="submit" class="checkout__button btn btn--01">Checkout</button>
+						<a href="#" class="checkout__demo">Try Free Demo</a>
+					</form>
+				</div>
+			</section>
+
 		</main>
 		<footer class="footer">
 			<div class="footer__bg">
@@ -78,7 +189,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240226172559"></script>
+	<script src="js/app.min.js?_v=20240229185111"></script>
 </body>
 
 </html>

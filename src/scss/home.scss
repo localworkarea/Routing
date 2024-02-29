@@ -56,6 +56,7 @@
 // ====================
 // ============================================
 .about {
+  @extend %sectionPadding;
   // .about__container
   &__container {
   }
@@ -106,16 +107,11 @@
   }
 }
 
-.about,
-.deliver {
-  @include adaptiveValue("padding-top", 100, 50);
-  @include adaptiveValue("padding-bottom", 100, 50);
-}
-
 // ==========
 // ====================
 // ============================================
 .deliver {
+  @extend %sectionPadding;
   // .deliver__container
   &__container {
   }
@@ -180,5 +176,279 @@
   &__txt {
     line-height: 1.5;
     @include adaptiveValue("font-size", 20, 16);
+  }
+}
+
+
+// ==========
+// ====================
+// ============================================
+.pricing {
+  background-color: #e1e1e1;
+  // background-color: white;
+  // .pricing__container
+  &__container {
+    @extend %sectionPadding;
+  }
+  // .pricing__list
+  &__list {
+    display: grid;
+    @include adaptiveValue("gap", 20, 10);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+    @media (min-width:$mobile){
+      grid-template-columns: repeat(3,1fr);
+    }
+    @media (max-width:$mobile) and (min-width:$mobileSmall){
+      grid-template-columns: repeat(2,1fr);        
+    }
+  }
+  // .pricing__item
+  &__item {
+  }
+}
+
+.item-pricing {
+  @include adaptiveValue("padding-left", 20, 15);
+  @include adaptiveValue("padding-right", 20, 15);
+  @include adaptiveValue("padding-bottom", 30, 15);
+  @include adaptiveValue("padding-top", 30, 15);
+  border-radius: toRem(6);
+  border: toRem(2) solid white;
+  background: #f5f5f5;
+  
+  &:nth-child(1) {
+    .item-pricing__price {
+      border-color: $yellowMain;
+    }
+  }
+  &:nth-child(2) {
+    .item-pricing__price {
+      border-color: #000;
+    }
+  }
+  &:nth-child(3) {
+    .item-pricing__price {
+      border-color: $green;
+    }
+  }
+  @media (min-width:$mobileSmall){
+    display: flex;
+    flex-direction: column;
+  }
+  // .item-pricing__title
+  &__title {
+    color: #000;
+    font-family: "Playfair Display";
+    @include adaptiveValue("font-size", 36, 28,0,1920,375);
+    text-transform: capitalize;
+    margin-bottom: toRem(5);
+    font-weight: 700;
+    @media (min-width:$mobileSmall){
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: toRem(-8);
+        left: 0;
+        width: 20%;
+        height: toRem(1);
+        background-color: #000;
+
+      }
+    }
+    @media (max-width:$mobileSmall){
+      text-align: center;        
+    }
+  }
+	// .item-pricing__price
+	&__price {
+    color: #000;
+    font-family: "Playfair Display";
+    @include adaptiveValue("font-size", 48, 36);
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: toRem(25);
+    border-bottom: toRem(3) solid #000;
+    margin-bottom: toRem(20);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    .price {
+      line-height: normal
+    }
+    .month {
+      @include adaptiveValue("font-size", 28, 18);
+    }
+    .dollar {
+      font-family: initial;
+      @include adaptiveValue("font-size", 40, 24);
+    }
+	}
+  // .item-pricing__subtitle
+  &__subtitle {
+    line-height: 1.1;
+    @include adaptiveValue("font-size", 16, 14);
+    &:not(:last-child) {
+      margin-bottom: toRem(30);
+    }
+  }
+  // .item-pricing__sublist
+  &__sublist {
+    margin-bottom: toRem(30);
+    @media (min-width:$mobileSmall){
+       flex: 1; 
+    }
+  }
+  // .item-pricing__subitem
+  &__subitem {
+    position: relative;
+    padding-left: toRem(25);
+      &::before {
+        content: '';
+        position: absolute;
+        top: toRem(5);
+        left: toRem(5);
+        width: toRem(6);
+        height: toRem(6);
+        border-radius: 50%;
+        background-color: $mainColor;
+        flex: 0 0 auto;
+      }
+      p {
+        line-height: 1.2;
+      }
+    &:not(:last-child) {
+      margin-bottom: toRem(5);
+    }
+  }
+	// .item-pricing__button
+	&__button {
+	}
+}
+
+.pricing {
+  // .pricing__checkout
+  &__checkout {
+  }
+}
+
+.checkout {
+  @include adaptiveValue("padding", 20, 15);
+  background-color: $blackBg;
+  border-radius: toRem(6);
+  border: toRem(1) solid white;
+  color: white;
+  @media (min-width:$mobile){
+    width: 100%;
+    max-width: toRem(585);
+    margin: 0 auto;
+  }
+  // .checkout__licenses
+  &__licenses {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: toRem(25);
+  }
+  // .checkout__lic-title
+  &__lic-title {
+  }
+  // .checkout__count
+  &__count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: toRem(12);
+    &.total {
+      margin-bottom: toRem(25);
+    }
+  }
+  // .checkout__count-txt
+  &__count-txt {
+    .total & {
+      font-size: toRem(22);
+      font-weight: 700;
+    }
+  }
+  // .checkout__num
+  &__num {
+    .total & {
+      font-size: toRem(22);
+      font-weight: 700;
+    }
+  }
+  // .checkout__checkbox
+  &__checkbox {
+  }
+	// .checkout__button
+	&__button {
+    margin-bottom: toRem(15);
+	}
+  // .checkout__demo
+  &__demo {
+    font-size: toRem(18);
+    color: $blueLogo;
+    transition: color .3s;
+    @media (any-hover: hover){
+      &:hover{
+        color: white;
+      }
+    }
+  }
+}
+
+.quantity {
+  // .quantity__button
+  &__button {
+  }
+  // .quantity__button--minus
+  &__button--minus {
+  }
+  // .quantity__input
+  &__input {
+    input {
+      pointer-events: none;
+    }
+  }
+  // .quantity__button--plus
+  &__button--plus {
+  }
+}
+
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: toRem(16);
+  margin-bottom: toRem(15);
+  cursor: pointer;
+  // .checkbox__input
+  &__input {
+    width: toRem(20);
+    height: toRem(20);
+    
+  }
+  // .checkbox__label
+  &__label {
+  }
+  // .checkbox__text
+  &__text {
+    line-height: normal;
+    @media (max-width:$mobileSmall){
+       font-size: toRem(14); 
+    }
+    a {
+      color: $blueLogo;
+      text-decoration: underline;
+      text-underline-offset: toRem(3);
+      transition: color .3s;
+      @media (any-hover: hover){
+        &:hover{
+          color: white;
+        }
+      }
+    }
   }
 }

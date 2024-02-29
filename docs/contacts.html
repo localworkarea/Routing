@@ -6,24 +6,24 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240229185111">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240229215009">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper contacts-page">
 		<header data-scroll="20" class="header">
 			<div class="header__container">
-				<a href="index.html" class="header__logo">
+				<a href="/" class="header__logo">
 					<img src="img/icons/logo.svg" width="54" height="54" alt="logo company">
 					<span>OUTSTRIPE</span>
 				</a>
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="index.html" class="menu__link ">Home</a></li>
+							<li class="menu__item"><a href="/" class="menu__link ">Home</a></li>
 							<li class="menu__item"><a href="pricing.html" class="menu__link ">Pricing</a></li>
 							<li class="menu__item"><a href="how.html" class="menu__link ">How it works</a></li>
 							<li class="menu__item"><a href="about.html" class="menu__link ">About Us</a></li>
@@ -31,11 +31,38 @@
 						</ul>
 					</nav>
 				</div>
-				<a href="#" data-da=".menu__body,900.98,last" class="menu__button btn btn--01">Get Started</a>
+				<a href="https://routestripe.com/xyz/#/routing/" data-da=".menu__body,900.98,last" class="menu__button btn btn--01">Get Started</a>
 				<button type="button" class="menu__icon icon-menu" aria-label="button to open/close a mobile menu"><span></span></button>
 			</div>
 		</header>
 		<main class="page">
+			<section class="contacts">
+				<div class="sub-head">
+					<div class="sub-head__container">
+						<h1 class="sub-head__title main-title title-sub">Contact Us</h1>
+						<p class="sub-head__subtitle">Send us a Message</p>
+					</div>
+				</div>
+				<div class="contacts__container">
+					<div class="contacts__more">
+						<p class="contacts__txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, atque libero? Quia mollitia consequatur in veritatis iusto voluptatem minima, autem vero voluptatibus iure nostrum recusandae vel tenetur, facere maiores impedit.</p>
+						<address class="contacts__mail">
+							<p class="contacts__mail-title small-title title-sub">Mail Us</p>
+							<a href="mailto:mail@example.com" class="contacts__mail-e">mail@example.com</a>
+						</address>
+					</div>
+					<form data-dev data-popup-message="#popupMessage" class="contacts__form form-contacts" method="POST">
+						<div class="form-contacts__item">
+							<input type="text" name="name" data-error="Please enter your name." placeholder="Name*" class="form-contacts__input input" data-required>
+						</div>
+						<div class="form-contacts__item">
+							<input type="text" name="email" data-error="Please enter your email address" placeholder="Email*" class="form-contacts__input input" data-required="email">
+						</div>
+						<textarea type="text" name="message" placeholder="Message" class="form-contacts__textarea input"></textarea>
+						<button type="submit" class="form-contacts__button btn btn--02">Send</button>
+					</form>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__bg">
@@ -43,33 +70,33 @@
 			</div>
 			<div class="footer__container">
 				<div class="footer__top">
-					<a href="index.html" class="footer__logo">
+					<a href="/" class="footer__logo">
 						<img src="img/icons/logo.svg" width="54" height="54" alt="logo company">
 					</a>
 					<nav class="footer__nav nav-footer">
 						<ul class="nav-footer__list">
 							<li class="nav-footer__item">
-								<a href="#" class="nav-footer__link">Pricing</a>
+								<a href="pricing.html" class="nav-footer__link">Pricing</a>
 							</li>
 							<li class="nav-footer__item">
-								<a href="#" class="nav-footer__link">How it works</a>
+								<a href="how.html" class="nav-footer__link">How it works</a>
 							</li>
 							<li class="nav-footer__item">
-								<a href="#" class="nav-footer__link">About us</a>
+								<a href="about.html" class="nav-footer__link">About us</a>
 							</li>
 							<li class="nav-footer__item">
-								<a href="#" class="nav-footer__link">Contacts</a>
+								<a href="contacts" class="nav-footer__link">Contacts</a>
 							</li>
 							<li class="nav-footer__item">
-								<a href="#" class="nav-footer__link">Route Optimization API</a>
+								<a href="api" class="nav-footer__link">Route Optimization API</a>
 							</li>
 						</ul>
 					</nav>
 				</div>
 				<div class="footer__bottom">
 					<div class="footer__left">
-						<a href="#" class="footer__link">Privacy Policy</a>
-						<a href="#" class="footer__link">Terms of Service</a>
+						<a href="policy.html" class="footer__link">Privacy Policy</a>
+						<a href="terms.html" class="footer__link">Terms of Service</a>
 					</div>
 					<p class="footer__allright">
 						© 2024 Powered by Qubants. All right reserved.
@@ -78,7 +105,20 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240229185111"></script>
+	<div id="popupMessage" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close" aria-label="button to close this popup">
+					<img src="img/icons/close.svg" width="30" height="30" alt="close icon">
+				</button>
+				<div class="popup__text">
+					Thanks for the request!
+					We've got your message and will respond promptly.
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240229215009"></script>
 </body>
 
 </html>

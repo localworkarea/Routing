@@ -185,10 +185,10 @@
 // ============================================
 .pricing {
   background-color: #e1e1e1;
-  // background-color: white;
   // .pricing__container
   &__container {
-    @extend %sectionPadding;
+    padding-top: toRem(50);
+    padding-bottom: toRem(50);
   }
   // .pricing__list
   &__list {
@@ -207,6 +207,9 @@
   // .pricing__item
   &__item {
   }
+    // .pricing__checkout
+    &__checkout {
+    }
 }
 
 .item-pricing {
@@ -328,12 +331,6 @@
 	}
 }
 
-.pricing {
-  // .pricing__checkout
-  &__checkout {
-  }
-}
-
 .checkout {
   @include adaptiveValue("padding", 20, 15);
   background-color: $blackBg;
@@ -417,7 +414,6 @@
   }
 }
 
-
 .checkbox {
   display: flex;
   align-items: center;
@@ -452,3 +448,55 @@
     }
   }
 }
+
+
+// ==========
+// ====================
+// ============================================
+.contacts {
+  background-color: #e1e1e1;
+  // .contacts__container
+  &__container {
+    @extend %sectionPadding;
+    display: grid;
+    @include adaptiveValue("gap", 40, 30);
+    @media (min-width:toEm(650.98)){
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+  // .contacts__more
+  &__more {
+  }
+  // .contacts__txt
+  &__txt {
+    @include adaptiveValue("font-size", 18, 14);
+    line-height: normal;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+  // .contacts__mail
+  &__mail {
+    font-style: normal;
+  }
+  // .contacts__mail-title
+  &__mail-title {
+    color: #000;
+    @include adaptiveValue("margin-bottom", 15, 10);
+  }
+  // .contacts__mail-e
+  &__mail-e {
+    font-weight: 800;
+    transition: color .3s ease;
+    @media (any-hover: hover){
+      &:hover{
+        color: $blueLogo;
+      }
+    }
+    @include adaptiveValue("font-size", 22, 18);
+  }
+  // .contacts__form
+  &__form {
+  }
+}
+

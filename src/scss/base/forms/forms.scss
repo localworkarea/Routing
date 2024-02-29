@@ -1,20 +1,67 @@
-//<FORM>
-// Сніппет (HTML):
-.form {
-	&__row {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: toRem(10) toRem(20);
+	border: toRem(1) solid #000;
+	background-color: white;
+	// caret-color: inherit;
+	color: #000;
+	&._form-focus {
 	}
-	&__column {
-	}
-	&__line {
-	}
-	&__input {
-	}
-	&__button {
-	}
-	&__error {
+	&._form-error {
 	}
 }
-//</FORM>
+.input[placeholder]:not([data-placeholder-nohiden]) {
+	&::placeholder {
+		transition: opacity 0.3s;
+	}
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+textarea.input {
+	resize: none;
+	padding: toRem(10) toRem(20);
+}
+
+.form-contacts {
+  display: grid;
+	@include adaptiveValue("row-gap", 20, 15);
+  // .form-contacts__item
+  &__item {
+    .form__error {
+      margin-top: toRem(5);
+      @include adaptiveValue("font-size", 14, 12);
+      color: red;
+    }
+  }
+  // .form-contacts__input
+  &__input {
+    height: toRem(50);
+  }
+	// .form-contacts__textarea
+	&__textarea {
+    min-height: toRem(120);
+	}
+  // .form-contacts__button
+  &__button {
+    @media (min-width:$mobileSmall){
+      height: toRem(50) !important;
+      font-size: toRem(18) !important;
+    }
+  }
+}
+
 
 // <BUTTONS>
 // Сніппет (HTML): btn

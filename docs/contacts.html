@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240229215009">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240301175952">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,18 +37,12 @@
 		</header>
 		<main class="page">
 			<section class="contacts">
-				<div class="sub-head">
-					<div class="sub-head__container">
-						<h1 class="sub-head__title main-title title-sub">Contact Us</h1>
-						<p class="sub-head__subtitle">Send us a Message</p>
-					</div>
-				</div>
 				<div class="contacts__container">
 					<div class="contacts__more">
-						<p class="contacts__txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, atque libero? Quia mollitia consequatur in veritatis iusto voluptatem minima, autem vero voluptatibus iure nostrum recusandae vel tenetur, facere maiores impedit.</p>
+						<p class="contacts__txt">Write to us your proposals for cooperation and we will definitely contact you and make a profitable offer.</p>
 						<address class="contacts__mail">
 							<p class="contacts__mail-title small-title title-sub">Mail Us</p>
-							<a href="mailto:mail@example.com" class="contacts__mail-e">mail@example.com</a>
+							<a href="mailto:qubants@gmail.com" class="contacts__mail-e">qubants@gmail.com</a>
 						</address>
 					</div>
 					<form data-dev data-popup-message="#popupMessage" class="contacts__form form-contacts" method="POST">
@@ -56,7 +50,7 @@
 							<input type="text" name="name" data-error="Please enter your name." placeholder="Name*" class="form-contacts__input input" data-required>
 						</div>
 						<div class="form-contacts__item">
-							<input type="text" name="email" data-error="Please enter your email address" placeholder="Email*" class="form-contacts__input input" data-required="email">
+							<input type="email" name="email" data-error="Please enter your email address" placeholder="Email*" class="form-contacts__input input" data-required="email">
 						</div>
 						<textarea type="text" name="message" placeholder="Message" class="form-contacts__textarea input"></textarea>
 						<button type="submit" class="form-contacts__button btn btn--02">Send</button>
@@ -87,9 +81,9 @@
 							<li class="nav-footer__item">
 								<a href="contacts" class="nav-footer__link">Contacts</a>
 							</li>
-							<li class="nav-footer__item">
-								<a href="api" class="nav-footer__link">Route Optimization API</a>
-							</li>
+							<!-- <li class="nav-footer__item">
+						<a href="api" class="nav-footer__link">Route Optimization API</a>
+					</li> -->
 						</ul>
 					</nav>
 				</div>
@@ -105,20 +99,20 @@
 			</div>
 		</footer>
 	</div>
-	<div id="popupMessage" aria-hidden="true" class="popup">
+	<div id="popupMessage" aria-hidden="true" class="popup popup-msg">
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<button data-close type="button" class="popup__close" aria-label="button to close this popup">
 					<img src="img/icons/close.svg" width="30" height="30" alt="close icon">
 				</button>
-				<div class="popup__text">
-					Thanks for the request!
-					We've got your message and will respond promptly.
+				<div class="popup-msg__text">
+					<p class="popup-msg__title">Thanks for the request!</p>
+					<p class="popup-msg__txt">We've got your message and will respond promptly.</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240229215009"></script>
+	<script src="js/app.min.js?_v=20240301175952"></script>
 </body>
 
 </html>

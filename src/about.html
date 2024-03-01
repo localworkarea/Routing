@@ -4,7 +4,7 @@
 	"title":"Home Page"
 	})
 	<body>
-		<div class="wrapper">
+		<div class="wrapper about-page">
 			@@include('html/_header.htm',{
 				"home": "",
 				"price": "",
@@ -13,6 +13,63 @@
 				"contacts": ""
 			})
 			<main class="page">
+				<section class="about-us">
+					<div class="about-us__container">
+						<div class="about-us__head">
+							<p class="about-us__txt">
+								We tried not only to use the methods of optimizing delivery routes accumulated over the past 100 years, but also developed our own additional heuristics for a more optimal and careful selection of the optimal combination. Our main goal is not only to provide a service for calculations using API, we offer you to adapt the tools we have directly to your business. We can also develop monitors for dispatcher, courier and client to track, edit and manage delivery from all sides. You can look at our other projects to appreciate the depth and scale of the tasks that we set for ourselves.
+							</p>
+							<a href="https://qubants.com" class="about-us__link">qubants.com</a>
+						</div>
+						<h2 class="about-us__subitle small-title title-sub">Our Team</h2>
+						<ul class="about-us__list">
+							<li class="about-us__item item-about">
+								<div class="item-about__photo">
+									<img class="item-about__img ibg" src="@img/team/serg.png" alt="Sergei Schevchenko">
+								</div>
+								<h3 class="item-about__title">
+									Sergei Schevchenko
+								</h3>
+								<p class="item-about__skills">
+									Full-stack developer. Code optimization, distributed computing architecture, database design and implementation. Business Intelligence. PHP 7+, Laravel, JS frameworks, C++, C#, Visual Basic
+								</p>
+							</li>
+							<li class="about-us__item item-about">
+								<div class="item-about__photo">
+									<img class="item-about__img ibg" src="@img/team/anton.png" alt="Anthony Vinnik">
+								</div>
+								<h3 class="item-about__title">
+									Anthony Vinnik
+								</h3>
+								<p class="item-about__skills">
+									Full-stack developer. PHP 7+, Laravel, JS frameworks, debugging, site testing and web performance. Version control.Emerging technologies
+								</p>
+							</li>
+							<li class="about-us__item item-about">
+								<div class="item-about__photo">
+									<img class="item-about__img ibg" src="@img/team/alex.png" alt="Aleksandr Schevchenko">
+								</div>
+								<h3 class="item-about__title">
+									Aleksandr Schevchenko
+								</h3>
+								<p class="item-about__skills">
+									Web designer. Graphic. IT Support
+								</p>
+							</li>
+							<li class="about-us__item item-about">
+								<div class="item-about__photo">
+									<img class="item-about__img ibg" src="@img/team/denys.png" alt="Denys Mykhailenko">
+								</div>
+								<h3 class="item-about__title">
+									Denys Mykhailenko
+								</h3>
+								<p class="item-about__skills">
+									Frontend Web Developer | HTML CSS JS | Responsive & pixel-perfect
+								</p>
+							</li>
+						</ul>
+					</div>
+				</section>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>

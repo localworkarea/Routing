@@ -1,7 +1,6 @@
 .footer {
   color: white;
-  @include adaptiveValue("padding-top", 100, 50);
-  @include adaptiveValue("padding-bottom", 30, 20);
+  padding: toRem(20) 0;
   position: relative;
 	// .footer__bg
 	&__bg {
@@ -25,10 +24,12 @@
   // .footer__top
   &__top {
     display: grid;
-    padding-bottom: toRem(30);
+    padding-bottom: toRem(20);
+    align-items: flex-end;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     @media (min-width:$mobileSmall){
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr auto;
+      gap: toRem(30);
     }
     @media (max-width:$mobileSmall){
       grid-template-columns: auto 1fr;
@@ -37,10 +38,15 @@
   }
   // .footer__logo
   &__logo {
+    @media (max-width:$mobileSmall){
+       display: none; 
+    }
     img {
-      @include adaptiveValue("max-width", 200, 100);
-      width: 100%;
-      height: auto;
+      @include adaptiveValue("max-width", 50, 30);
+      @media (min-width:$mobileSmall){
+        width: 100%;
+        height: auto;
+      }
     }
   }
   // .footer__nav
@@ -86,16 +92,22 @@
 .nav-footer {
   // .nav-footer__list
   &__list {
-    display: flex;
-    flex-direction: column;
-    gap: toRem(10);
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    @include adaptiveValue("column-gap", 40, 20,2,1920,750.98);
+    row-gap: toRem(15);
+    @media (max-width: toEm(750.98)){
+        grid-template-columns: 1fr auto;
+        column-gap: toRem(40);
+    }
   }
   // .nav-footer__item
   &__item {
   }
   // .nav-footer__link
   &__link {
-    @include adaptiveValue("font-size", 26, 18);
+    @include adaptiveValue("font-size", 18, 14);
+    line-height: 1.1;
     text-transform: uppercase;
     @extend %animLines;
   }

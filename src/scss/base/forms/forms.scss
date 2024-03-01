@@ -55,6 +55,10 @@ textarea.input {
 	}
   // .form-contacts__button
   &__button {
+		._sending & {
+			pointer-events: none;
+			opacity: .8;
+		}
     @media (min-width:$mobileSmall){
       height: toRem(50) !important;
       font-size: toRem(18) !important;

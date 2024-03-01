@@ -1,3 +1,10 @@
+.contacts-page {
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .btn {
   display: flex;
   align-items:center;
@@ -77,7 +84,7 @@
 }
 
 .main-title {
-  @include adaptiveValue("font-size", 48, 36,0,1920,375);
+  @include adaptiveValue("font-size", 48, 32,0,1920,375);
   &:not(:last-child) {
     @include adaptiveValue("margin-bottom", 50, 20);
   }
@@ -156,42 +163,46 @@
   @include adaptiveValue("padding-bottom", 100, 75,2,1920,1440.98);
   @include adaptiveValue("padding-bottom", 75, 50,3,1440.98,480);
 }
-
-
-.sub-head {
-  background-color: #000;
-  padding-bottom: toRem(20);
-  @media (min-width:toEm(900.98)){
-      padding-top: toRem(100);
-  }
-  @media (max-width: toEm(900.98)){
-      padding-top: toRem(80);
-  }
-  // .sub-head__container
-  &__container {
-  }
-  // .sub-head__title
-  &__title {
-    @media (min-width:toEm(900.98)){
-        display: none;
-    }
-    @media (max-width: toEm(900.98)){
-      color: white;
-      font-weight: 700;
-      &:not(:last-child) {
-        margin-bottom: toRem(15) !important;
-      }
-    }
-  }
-  // .sub-head__subtitle
-  &__subtitle {
-    @include adaptiveValue("margin-left", 27, 23,0,1920,375);
-    @include adaptiveValue("font-size", 26, 18);
-    @media (min-width:$mobileSmall){
-      text-transform: capitalize;
-    }
-    @media (max-width:$mobileSmall){
-       text-transform: uppercase; 
-    }
-  }
+%oneSectionPadding {
+  @include adaptiveValue("padding-top", 100, 70);
+  @include adaptiveValue("padding-bottom", 50, 30);
 }
+
+// .sub-head {
+//   background-color: #000;
+//   padding-bottom: toRem(20);
+//   @media (min-width:toEm(900.98)){
+//       padding-top: toRem(100);
+//   }
+//   @media (max-width: toEm(900.98)){
+//       padding-top: toRem(70);
+//   }
+//   // .sub-head__container
+//   &__container {
+//   }
+//   // .sub-head__title
+//   &__title {
+//     @media (min-width:toEm(900.98)){
+//         display: none;
+//     }
+//     @media (max-width: toEm(900.98)){
+//       color: white;
+//       font-weight: 700;
+//       &:not(:last-child) {
+//         margin-bottom: toRem(15) !important;
+//       }
+//     }
+//   }
+//   // .sub-head__subtitle
+//   &__subtitle {
+//     @include adaptiveValue("margin-left", 27, 23,0,1920,375);
+//     @include adaptiveValue("font-size", 26, 18);
+//     @media (min-width:$mobileSmall){
+//       text-transform: capitalize;
+//     }
+//     @media (max-width:$mobileSmall){
+//        text-transform: uppercase; 
+//     }
+//   }
+// }
+

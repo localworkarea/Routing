@@ -32,11 +32,13 @@
 	&__container {
     position: relative;
     z-index: 2;
+    width: 100%;
 	}
 	// .hero__title
 	&__title {
     color: white;
     position: relative;
+    margin-bottom: toRem(48) !important;
     &::before {
       content: '';
       position: absolute;
@@ -47,7 +49,17 @@
       background-color: white;
     }
     @media (min-width:$mobileSmall){
-      width: 70%;
+      width: 60%;
+    }
+	}
+	// .hero__subtitle
+	&__subtitle {
+    color: white;
+    line-height: normal;
+    text-transform: capitalize;
+    @include adaptiveValue("font-size", 28, 22);
+    @media (min-width:$mobileSmall){
+       width: 60%; 
     }
 	}
 }
@@ -57,6 +69,7 @@
 // ============================================
 .about {
   @extend %sectionPadding;
+  background-color: white;
   // .about__container
   &__container {
   }
@@ -184,11 +197,9 @@
 // ====================
 // ============================================
 .pricing {
-  background-color: #e1e1e1;
+  @extend %oneSectionPadding;
   // .pricing__container
   &__container {
-    padding-top: toRem(50);
-    padding-bottom: toRem(50);
   }
   // .pricing__list
   &__list {
@@ -222,17 +233,17 @@
   background: #f5f5f5;
   
   &:nth-child(1) {
-    .item-pricing__price {
+    .item-pricing__head {
       border-color: $yellowMain;
     }
   }
   &:nth-child(2) {
-    .item-pricing__price {
+    .item-pricing__head {
       border-color: #000;
     }
   }
   &:nth-child(3) {
-    .item-pricing__price {
+    .item-pricing__head {
       border-color: $green;
     }
   }
@@ -240,6 +251,13 @@
     display: flex;
     flex-direction: column;
   }
+	// .item-pricing__head
+	&__head {
+    @include adaptiveValue("min-height", 136, 112,2,1920,480.98);
+    padding-bottom: toRem(25);
+    margin-bottom: toRem(20);
+    border-bottom: toRem(3) solid #000;
+	}
   // .item-pricing__title
   &__title {
     color: #000;
@@ -272,9 +290,7 @@
     @include adaptiveValue("font-size", 48, 36);
     font-weight: 700;
     text-align: center;
-    padding-bottom: toRem(25);
-    border-bottom: toRem(3) solid #000;
-    margin-bottom: toRem(20);
+    
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -291,15 +307,16 @@
 	}
   // .item-pricing__subtitle
   &__subtitle {
+    flex: 1;
     line-height: 1.1;
     @include adaptiveValue("font-size", 16, 14);
     &:not(:last-child) {
-      margin-bottom: toRem(30);
+      @include adaptiveValue("margin-bottom", 20, 15);
     }
   }
   // .item-pricing__sublist
   &__sublist {
-    margin-bottom: toRem(30);
+    @include adaptiveValue("margin-bottom", 20, 15);
     @media (min-width:$mobileSmall){
        flex: 1; 
     }
@@ -454,25 +471,34 @@
 // ====================
 // ============================================
 .contacts {
-  background-color: #e1e1e1;
+    @extend %oneSectionPadding;
+    flex:1;
+    display: flex;
+    align-items: center;
   // .contacts__container
   &__container {
-    @extend %sectionPadding;
     display: grid;
     @include adaptiveValue("gap", 40, 30);
-    @media (min-width:toEm(650.98)){
+    @media (min-width:$mobile){
       grid-template-columns: repeat(2,1fr);
     }
   }
   // .contacts__more
   &__more {
+    @media (min-width:toEm(680.98)){
+      display: flex;
+      flex-direction: column;
+    }
   }
   // .contacts__txt
   &__txt {
-    @include adaptiveValue("font-size", 18, 14);
+    @include adaptiveValue("font-size", 22, 18);
     line-height: normal;
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 50, 30);
+      @include adaptiveValue("margin-bottom", 50, 20);
+    }
+    @media (min-width:toEm(680.98)){
+      flex: 1;
     }
   }
   // .contacts__mail
@@ -500,3 +526,173 @@
   }
 }
 
+
+
+// ==========
+// ====================
+// ============================================
+.how {
+  @extend %oneSectionPadding;
+  color: #0e0e0e;
+  // .how__container-s
+  &__container-s {
+  }
+  // .how__title
+  &__title {
+    color: #000;
+  }
+  // .how__txt
+  &__txt {
+    line-height: 1.5;
+    @include adaptiveValue("font-size", 20, 18);
+    &:not(:last-child) {
+      margin-bottom: toRem(32);
+    }
+    @media (max-width:$mobileSmall){
+       line-height: 1.7; 
+    }
+  }
+  // .how__subtitle
+  &__subtitle {
+    color: #000;
+    @include adaptiveValue("margin-top", 100, 50);
+    margin-bottom: toRem(24);
+  }
+  // .how__list
+  &__list {
+    display: grid;
+    @include adaptiveValue("gap", 50, 20);
+    @media (min-width:$mobileSmall){
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  // .how__item
+  &__item {
+  }
+}
+
+.item-how {
+  display: flex;
+  flex-direction: column;
+  // .item-how__ic
+  &__ic {
+    width: 100%;
+    max-width: toRem(120);
+    height: auto;
+  }
+  // .item-how__title
+  &__title {
+    color: #000;
+    font-weight: 800;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: normal;
+    margin: toRem(12) 0 toRem(8);
+  }
+  // .item-how__txt
+  &__txt {
+    line-height: 1.5;
+    @include adaptiveValue("font-size", 18, 16);
+    @media (max-width:$mobileSmall){
+       line-height: 1.7; 
+    }
+  }
+}
+
+
+// ==========
+// ====================
+// ============================================
+.about-us {
+  @extend %oneSectionPadding;
+  color: #000;
+  // .about-us__container
+  &__container {
+  }
+  // .about-us__head
+  &__head {
+  }
+  // .about-us__title
+  &__title {
+  }
+  // .about-us__txt
+  &__txt {
+    line-height: 1.5;
+    @include adaptiveValue("font-size", 18, 16);
+    margin-bottom: toRem(30);
+    @media (min-width:$mobile){
+      max-width: 80%;
+    }
+  }
+  // .about-us__link
+  &__link {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 18, 16);
+    text-transform: uppercase;
+    transition: color .3s ease;
+    @media (any-hover: hover){
+      &:hover{
+        color: $blueLogo;
+      }
+    }
+  }
+	// .about-us__subitle
+	&__subitle {
+    @include adaptiveValue("margin-bottom", 50, 30);
+    @media (min-width:$mobileSmall){
+      text-align: center;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width:$mobileSmall){
+       margin-top: toRem(30); 
+    }
+	}
+  // .about-us__list
+  &__list {
+    display: grid;
+    @include adaptiveValue("gap", 30, 20);
+    @media (min-width:toEm(900.98)){
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: toEm(900.98)) and (min-width: $mobileSmall) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  // .about-us__item
+  &__item {
+  }
+}
+
+.item-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: toRem(13);
+	// .item-about__photo
+	&__photo {
+    background-color: #000;
+    border-radius: 50%;
+    border: toRem(2) solid white;
+    overflow: hidden;
+	}
+  // .item-about__img
+  &__img {
+    flex: 0 0 auto;
+    border-radius: 50%;
+    width: toRem(180);
+    height: toRem(180);
+  }
+  // .item-about__title
+  &__title {
+    font-family: "Playfair Display";
+    font-weight: 700;
+    @include adaptiveValue("font-size", 22, 18);
+    text-align: center;
+  }
+  // .item-about__skills
+  &__skills {
+    text-align: center;
+    line-height: 1.2;
+  }
+}

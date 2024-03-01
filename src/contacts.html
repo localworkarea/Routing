@@ -14,16 +14,12 @@
 			})
 			<main class="page">
 				<section class="contacts">
-					@@include('html/_subhead.htm',{
-						"title":"Contact Us",
-						"subtitle":"Send us a Message"
-					})
 					<div class="contacts__container">
 						<div class="contacts__more">
-							<p class="contacts__txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, atque libero? Quia mollitia consequatur in veritatis iusto voluptatem minima, autem vero voluptatibus iure nostrum recusandae vel tenetur, facere maiores impedit.</p>
+							<p class="contacts__txt">Write to us your proposals for cooperation and we will definitely contact you and make a profitable offer.</p>
 							<address class="contacts__mail">
 								<p class="contacts__mail-title small-title title-sub">Mail Us</p>
-								<a href="mailto:mail@example.com" class="contacts__mail-e">mail@example.com</a>
+								<a href="mailto:qubants@gmail.com" class="contacts__mail-e">qubants@gmail.com</a>
 							</address>
 						</div>
 						<form data-dev data-popup-message="#popupMessage" class="contacts__form form-contacts" method="POST">
@@ -31,7 +27,7 @@
 								<input type="text" name="name" data-error="Please enter your name." placeholder="Name*" class="form-contacts__input input" data-required>
 							</div>
 							<div class="form-contacts__item">
-								<input type="text" name="email" data-error="Please enter your email address" placeholder="Email*" class="form-contacts__input input" data-required="email">
+								<input type="email" name="email" data-error="Please enter your email address" placeholder="Email*" class="form-contacts__input input" data-required="email">
 							</div>
 							<textarea type="text" name="message"  placeholder="Message" class="form-contacts__textarea input"></textarea>
 							<button type="submit" class="form-contacts__button btn btn--02">Send</button>
